@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  CharacterListViewController.swift
 //  RickAndMortyAppUIKit
 //
-//  Created by Andres Cordón on 20/5/24.
+//  Created by Andres Cordón on 22/5/24.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-        
+class CharacterListViewController: UIViewController {
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     let characters = [
@@ -26,15 +26,17 @@ class ViewController: UIViewController {
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         collectionView.register(UINib(nibName: CharacterCell.nibName, bundle: nil), forCellWithReuseIdentifier: CharacterCell.identifier)
     }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        collectionView.collectionViewLayout.invalidateLayout()
-    }
+    
+    
 
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension CharacterListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigationController?.pushViewController(DetailViewController(nibName: nil, bundle: nil), animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return characters.count
     }
@@ -48,7 +50,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         cell.layer.cornerRadius = 25
         cell.ivCharacter.image = UIImage(named: element.image)
         cell.lbName.text = element.name
-        cell.lbStatus.text = element.status.rawValue
+        cell.lbStatus.text = "Status: " + element.status.rawValue
         
         return cell
     }
@@ -59,7 +61,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension CharacterListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
          
         let size = (collectionView.frame.width - 30)/2
