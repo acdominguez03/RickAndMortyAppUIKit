@@ -13,6 +13,9 @@
 		7E226D9E2BFB4FC600B438FB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7E226D9D2BFB4FC600B438FB /* Base */; };
 		7E226DA02BFB4FC800B438FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E226D9F2BFB4FC800B438FB /* Assets.xcassets */; };
 		7E226DA32BFB4FC800B438FB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7E226DA22BFB4FC800B438FB /* Base */; };
+		7EE356632BFD271B00A75CB1 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE356612BFD271B00A75CB1 /* CharacterCell.swift */; };
+		7EE356642BFD271B00A75CB1 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE356622BFD271B00A75CB1 /* CharacterCell.xib */; };
+		7EE356682BFD285700A75CB1 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE356672BFD285700A75CB1 /* CharacterModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		7E226D9F2BFB4FC800B438FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E226DA22BFB4FC800B438FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E226DA42BFB4FC800B438FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EE356612BFD271B00A75CB1 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		7EE356622BFD271B00A75CB1 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
+		7EE356672BFD285700A75CB1 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,34 @@
 		7E226D952BFB4FC600B438FB /* RickAndMortyAppUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				7EE356652BFD284100A75CB1 /* data */,
 				7E226D962BFB4FC600B438FB /* AppDelegate.swift */,
 				7E226D982BFB4FC600B438FB /* SceneDelegate.swift */,
 				7E226D9A2BFB4FC600B438FB /* ViewController.swift */,
+				7EE356612BFD271B00A75CB1 /* CharacterCell.swift */,
+				7EE356622BFD271B00A75CB1 /* CharacterCell.xib */,
 				7E226D9C2BFB4FC600B438FB /* Main.storyboard */,
 				7E226D9F2BFB4FC800B438FB /* Assets.xcassets */,
 				7E226DA12BFB4FC800B438FB /* LaunchScreen.storyboard */,
 				7E226DA42BFB4FC800B438FB /* Info.plist */,
 			);
 			path = RickAndMortyAppUIKit;
+			sourceTree = "<group>";
+		};
+		7EE356652BFD284100A75CB1 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				7EE356662BFD284A00A75CB1 /* model */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		7EE356662BFD284A00A75CB1 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				7EE356672BFD285700A75CB1 /* CharacterModel.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +153,7 @@
 				7E226DA02BFB4FC800B438FB /* Assets.xcassets in Resources */,
 				7E226DA32BFB4FC800B438FB /* Base in Resources */,
 				7E226D9E2BFB4FC600B438FB /* Base in Resources */,
+				7EE356642BFD271B00A75CB1 /* CharacterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +165,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E226D9B2BFB4FC600B438FB /* ViewController.swift in Sources */,
+				7EE356682BFD285700A75CB1 /* CharacterModel.swift in Sources */,
 				7E226D972BFB4FC600B438FB /* AppDelegate.swift in Sources */,
 				7E226D992BFB4FC600B438FB /* SceneDelegate.swift in Sources */,
+				7EE356632BFD271B00A75CB1 /* CharacterCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
