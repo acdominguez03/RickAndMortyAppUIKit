@@ -19,4 +19,13 @@ struct Result: Codable {
     let episode: [String]
     let url: String
     let created: String
+    
+    func toCharacterModel() -> CharacterModel {
+        return CharacterModel(
+            id: self.id,
+            name: self.name,
+            image: self.image,
+            status: self.status.rawValue
+        )
+    }
 }

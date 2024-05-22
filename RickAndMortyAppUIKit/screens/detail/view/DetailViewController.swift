@@ -20,7 +20,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var lbOrigin: UILabel!
     @IBOutlet weak var lbLocation: UILabel!
     
-    let viewModel = DetailViewModel()
+    private var viewModel: DetailViewModel!
     private var cancellables: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class DetailViewController: UIViewController {
         
         setUpImage()
         responseViewModel()
-        viewModel.getCharacter(id: 2)
+        viewModel.getCharacter(id: viewModel.characterId)
         
     }
     
@@ -42,11 +42,19 @@ class DetailViewController: UIViewController {
             self?.ivCharacter.imageFrom(url: URL(string: value.image)!)
             self?.lbName.text = value.name
             self?.lbStatus.text = "Status: " + value.status
-            self?.lbType.text = "Type of character: " + value.type
+            if(value.type.isEmpty) {
+                self?.lbType.text = "Type of character: Unknown"
+            } else {
+                self?.lbType.text = "Type of character: " + value.type
+            }
             self?.lbSpecie.text = "Specie: " + value.species
             self?.lbOrigin.text = "Origin: " + value.origin
             self?.lbLocation.text = "Actual location: " + value.location
         }.store(in: &cancellables)
+    }
+    
+    func set(viewModel: DetailViewModel) {
+        self.viewModel = viewModel
     }
     
 }

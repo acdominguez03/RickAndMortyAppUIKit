@@ -12,18 +12,20 @@ class CharacterListViewModel: ObservableObject {
     
     @Published var characters: [CharacterModel] = []
     @Published var loading: Bool = false
-    let apiClient = ApiClient()
+    
+    let dataManager: CharacterListDataManager
+    
+    init(dataManager: CharacterListDataManager) {
+        self.dataManager = dataManager
+    }
     
     func getCharacters() {
         self.loading = true
-        apiClient.charactersRequest { [weak self] characterDTO in
-            let characters = characterDTO.results.map { character in
-                CharacterModel(name: character.name, image: character.image, status: character.status)
-            }
-            self?.characters = characters
-            self?.loading = false
-        } failure: { error in
-            print("error")
-        }
+        dataManager.getCharacters(success: { characters in
+            self.characters = characters
+            self.loading = false
+        }, failure: { error in
+            print(error)
+        })
     }
 }

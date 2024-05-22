@@ -8,7 +8,8 @@
 import Foundation
 
 struct CharacterModel {
+    let id: Int
     let name: String
     let image: String
-    let status: Status
+    let status: String
 }

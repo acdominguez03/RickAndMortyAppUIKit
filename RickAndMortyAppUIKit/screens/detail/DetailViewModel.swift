@@ -9,14 +9,20 @@ import Foundation
 
 class DetailViewModel: ObservableObject {
     @Published var character: CharacterDetailModel?
-    let apiClient = ApiClient()
+    
+    let dataManager: DetailDataManager
+    let characterId: Int
+    
+    init( dataManager: DetailDataManager, characterId: Int) {
+        self.dataManager = dataManager
+        self.characterId = characterId
+    }
     
     func getCharacter(id: Int) {
-        apiClient.characterDetailRequest(id: id) { [weak self] characterDTO in
-            print(characterDTO)
-            self?.character = characterDTO.toCharacterDetailModel()
-        } failure: { error in
+        dataManager.getCharacter(id: characterId, success: { character in
+            self.character = character
+        }, failure: { error in
             print(error)
-        }
+        })
     }
 }

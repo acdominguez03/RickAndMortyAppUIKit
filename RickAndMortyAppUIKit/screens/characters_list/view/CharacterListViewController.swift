@@ -13,7 +13,7 @@ class CharacterListViewController: UIViewController {
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let viewModel = CharacterListViewModel()
+    private var viewModel: CharacterListViewModel!
     private var cancellables: Set<AnyCancellable> = []
 
     override func viewDidLoad() {
@@ -21,14 +21,21 @@ class CharacterListViewController: UIViewController {
         title = "Characters"
         
         viewModel.getCharacters()
-       
+        
+        setUpCollectionView()
+        
+        responseViewModel()
+    }
+    
+    func setUpCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         collectionView.register(UINib(nibName: CharacterCell.nibName, bundle: nil), forCellWithReuseIdentifier: CharacterCell.identifier)
-        
-        
+    }
+    
+    func responseViewModel() {
         viewModel.$loading.sink { isLoading in
             if(!isLoading) {
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
@@ -40,12 +47,17 @@ class CharacterListViewController: UIViewController {
             }
         }.store(in: &cancellables)
     }
+    
+    func set(viewModel: CharacterListViewModel) {
+        self.viewModel = viewModel
+    }
 }
 
 extension CharacterListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(DetailViewController(), animated: true)
+        let elementId = viewModel.characters[indexPath.row].id
+        DetailWireframe(characterId: elementId).push(navigation: navigationController)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -61,7 +73,7 @@ extension CharacterListViewController: UICollectionViewDataSource, UICollectionV
         cell.layer.cornerRadius = 25
         cell.ivCharacter.imageFrom(url: URL(string: element.image)!)
         cell.lbName.text = element.name
-        cell.lbStatus.text = "Status: " + element.status.rawValue
+        cell.lbStatus.text = "Status: " + element.status
         
         return cell
     }

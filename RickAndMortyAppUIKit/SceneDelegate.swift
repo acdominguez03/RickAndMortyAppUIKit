@@ -18,11 +18,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        let characterListVC = CharacterListViewController(nibName: nil, bundle: nil)
+        let navigation = UINavigationController()
         
-        let rootVC = UINavigationController(rootViewController: characterListVC)
+        CharacterListWireframe().push(navigation: navigation)
         
-        window?.rootViewController = rootVC
+        window?.rootViewController = navigation
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
