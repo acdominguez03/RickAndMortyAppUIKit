@@ -7,12 +7,6 @@
 
 import Foundation
 
-enum Status: String {
-    case Alive
-    case Dead
-    case Unknown
-}
-
 struct CharacterModel {
     let name: String
     let image: String

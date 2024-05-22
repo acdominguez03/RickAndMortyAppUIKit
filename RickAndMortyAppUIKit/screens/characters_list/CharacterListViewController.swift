@@ -6,29 +6,40 @@
 //
 
 import UIKit
+import Combine
 
 class CharacterListViewController: UIViewController {
 
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let characters = [
-        CharacterModel(name: "Fido", image: "fido", status: Status.Alive),
-        CharacterModel(name: "Steve", image: "steve", status: Status.Dead),
-        CharacterModel(name: "Gordon", image: "gordon", status: Status.Unknown)
-    ]
+    let viewModel = CharacterListViewModel()
+    private var cancellables: Set<AnyCancellable> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        title = "Characters"
+        
+        viewModel.getCharacters()
+       
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         collectionView.register(UINib(nibName: CharacterCell.nibName, bundle: nil), forCellWithReuseIdentifier: CharacterCell.identifier)
+        
+        
+        viewModel.$loading.sink { isLoading in
+            if(!isLoading) {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                    self.loading.stopAnimating()
+                    self.collectionView.reloadData()
+                }
+            } else {
+                self.loading.startAnimating()
+            }
+        }.store(in: &cancellables)
     }
-    
-    
-
 }
 
 extension CharacterListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -38,17 +49,17 @@ extension CharacterListViewController: UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return characters.count
+        return viewModel.characters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let element = characters[indexPath.row]
+        let element = viewModel.characters[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterCell.identifier, for: indexPath) as! CharacterCell
 
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.cornerRadius = 25
-        cell.ivCharacter.image = UIImage(named: element.image)
+        cell.ivCharacter.imageFrom(url: URL(string: element.image)!)
         cell.lbName.text = element.name
         cell.lbStatus.text = "Status: " + element.status.rawValue
         
@@ -59,13 +70,14 @@ extension CharacterListViewController: UICollectionViewDataSource, UICollectionV
         let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
         return view
     }
+
 }
 
 extension CharacterListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
          
         let size = (collectionView.frame.width - 30)/2
-        return CGSize(width: size, height: size)
+        return CGSize(width: size, height: 200)
     }
 }
 
