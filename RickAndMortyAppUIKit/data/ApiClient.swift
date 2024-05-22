@@ -10,7 +10,7 @@ import Alamofire
 
 class ApiClient {
     
-    let baseUrl = "https://rickandmortyapi.com/api/character"
+    let baseUrl = "https://rickandmortyapi.com/api/character/"
     
     private var sessionManager: Alamofire.Session
     
@@ -52,7 +52,36 @@ class ApiClient {
                 switch response.result {
                 case .success(let data):
                     do {
-                        let character = try JSONDecoder().decode(CharactersDTO.self, from: data ?? Data())
+                        let characters = try JSONDecoder().decode(CharactersDTO.self, from: data ?? Data())
+                        print(characters)
+                        success(characters)
+                    } catch {
+                        print("error al descodificar")
+                    }
+                case .failure(let error):
+                    print(error)
+                    failure(error.localizedDescription)
+                }
+                    
+            }
+    }
+    
+    func characterDetailRequest(
+        id: Int,
+        method: HTTPMethod = .get,
+        parameters: Parameters? = nil,
+        headers: HTTPHeaders? = nil,
+        success: @escaping (CharacterDetailDTO) -> Void,
+        failure: @escaping (String) -> Void
+    ) {
+        let url = baseUrl + String(id)
+        
+        sessionManager.request(url, method: method, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+            .response { response in
+                switch response.result {
+                case .success(let data):
+                    do {
+                        let character = try JSONDecoder().decode(CharacterDetailDTO.self, from: data ?? Data())
                         print(character)
                         success(character)
                     } catch {

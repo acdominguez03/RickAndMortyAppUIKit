@@ -18,4 +18,17 @@ class CharacterDetailDTO: Codable {
     let url: String
     let created: String
     
+    
+    func toCharacterDetailModel() -> CharacterDetailModel {
+        return CharacterDetailModel(
+            id: self.id,
+            name: self.name,
+            image: self.image,
+            location: self.location.name,
+            origin: self.origin.name,
+            status: self.status.rawValue,
+            type: self.type,
+            species: self.species
+        )
+    }
 }

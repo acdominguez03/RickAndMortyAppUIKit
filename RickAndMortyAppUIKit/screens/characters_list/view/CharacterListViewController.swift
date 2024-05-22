@@ -45,7 +45,7 @@ class CharacterListViewController: UIViewController {
 extension CharacterListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(DetailViewController(nibName: nil, bundle: nil), animated: true)
+        navigationController?.pushViewController(DetailViewController(), animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

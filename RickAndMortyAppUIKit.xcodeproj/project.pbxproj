@@ -11,6 +11,8 @@
 		7E226D992BFB4FC600B438FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E226D982BFB4FC600B438FB /* SceneDelegate.swift */; };
 		7E226DA02BFB4FC800B438FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E226D9F2BFB4FC800B438FB /* Assets.xcassets */; };
 		7E226DA32BFB4FC800B438FB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7E226DA22BFB4FC800B438FB /* Base */; };
+		7E802C3A2BFE4FC300D31BD9 /* CharacterDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E802C392BFE4FC300D31BD9 /* CharacterDetailModel.swift */; };
+		7E802C3C2BFE512E00D31BD9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E802C3B2BFE512E00D31BD9 /* DetailViewModel.swift */; };
 		7EE356632BFD271B00A75CB1 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE356612BFD271B00A75CB1 /* CharacterCell.swift */; };
 		7EE356642BFD271B00A75CB1 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE356622BFD271B00A75CB1 /* CharacterCell.xib */; };
 		7EE356682BFD285700A75CB1 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE356672BFD285700A75CB1 /* CharacterModel.swift */; };
@@ -41,6 +43,8 @@
 		7E226D9F2BFB4FC800B438FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E226DA22BFB4FC800B438FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E226DA42BFB4FC800B438FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E802C392BFE4FC300D31BD9 /* CharacterDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailModel.swift; sourceTree = "<group>"; };
+		7E802C3B2BFE512E00D31BD9 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		7EE356612BFD271B00A75CB1 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		7EE356622BFD271B00A75CB1 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
 		7EE356672BFD285700A75CB1 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
@@ -94,11 +98,10 @@
 		7E226D952BFB4FC600B438FB /* RickAndMortyAppUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				7EFBA1702BFE3B8A000235F8 /* utils */,
 				7EFBA16D2BFE1776000235F8 /* certificates */,
-				7EFBA1532BFE02B8000235F8 /* domain */,
-				7EE3566F2BFD5A7600A75CB1 /* screens */,
 				7EE356652BFD284100A75CB1 /* data */,
+				7EE3566F2BFD5A7600A75CB1 /* screens */,
+				7EFBA1702BFE3B8A000235F8 /* utils */,
 				7E226D962BFB4FC600B438FB /* AppDelegate.swift */,
 				7E226D982BFB4FC600B438FB /* SceneDelegate.swift */,
 				7EE3566D2BFD5A4200A75CB1 /* Main.storyboard */,
@@ -107,6 +110,41 @@
 				7E226DA42BFB4FC800B438FB /* Info.plist */,
 			);
 			path = RickAndMortyAppUIKit;
+			sourceTree = "<group>";
+		};
+		7E802C3D2BFE5FDC00D31BD9 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				7EE356692BFD573400A75CB1 /* CharacterListViewController.swift */,
+				7EE3566A2BFD573400A75CB1 /* CharacterListViewController.xib */,
+				7EFBA1632BFE05ED000235F8 /* cell */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		7E802C3E2BFE5FF000D31BD9 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				7EE356722BFD5AB300A75CB1 /* DetailViewController.swift */,
+				7EE356732BFD5AB300A75CB1 /* DetailViewController.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		7E802C3F2BFE5FFA00D31BD9 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				7E802C392BFE4FC300D31BD9 /* CharacterDetailModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		7E802C402BFE600000D31BD9 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				7EE356672BFD285700A75CB1 /* CharacterModel.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		7EE356652BFD284100A75CB1 /* data */ = {
@@ -144,9 +182,8 @@
 		7EE356702BFD5A8500A75CB1 /* characters_list */ = {
 			isa = PBXGroup;
 			children = (
-				7EFBA1632BFE05ED000235F8 /* cell */,
-				7EE356692BFD573400A75CB1 /* CharacterListViewController.swift */,
-				7EE3566A2BFD573400A75CB1 /* CharacterListViewController.xib */,
+				7E802C402BFE600000D31BD9 /* model */,
+				7E802C3D2BFE5FDC00D31BD9 /* view */,
 				7EFBA1642BFE0607000235F8 /* CharacterListViewModel.swift */,
 			);
 			path = characters_list;
@@ -155,26 +192,11 @@
 		7EE356712BFD5A9B00A75CB1 /* detail */ = {
 			isa = PBXGroup;
 			children = (
-				7EE356722BFD5AB300A75CB1 /* DetailViewController.swift */,
-				7EE356732BFD5AB300A75CB1 /* DetailViewController.xib */,
+				7E802C3F2BFE5FFA00D31BD9 /* model */,
+				7E802C3E2BFE5FF000D31BD9 /* view */,
+				7E802C3B2BFE512E00D31BD9 /* DetailViewModel.swift */,
 			);
 			path = detail;
-			sourceTree = "<group>";
-		};
-		7EFBA1532BFE02B8000235F8 /* domain */ = {
-			isa = PBXGroup;
-			children = (
-				7EFBA1542BFE02C2000235F8 /* model */,
-			);
-			path = domain;
-			sourceTree = "<group>";
-		};
-		7EFBA1542BFE02C2000235F8 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				7EE356672BFD285700A75CB1 /* CharacterModel.swift */,
-			);
-			path = model;
 			sourceTree = "<group>";
 		};
 		7EFBA1632BFE05ED000235F8 /* cell */ = {
@@ -297,6 +319,8 @@
 				7EFBA1742BFE4A82000235F8 /* CharacterDetailDTO.swift in Sources */,
 				7EFBA15C2BFE03B4000235F8 /* Gender.swift in Sources */,
 				7EE356752BFD5AB300A75CB1 /* DetailViewController.swift in Sources */,
+				7E802C3C2BFE512E00D31BD9 /* DetailViewModel.swift in Sources */,
+				7E802C3A2BFE4FC300D31BD9 /* CharacterDetailModel.swift in Sources */,
 				7EE3566C2BFD573400A75CB1 /* CharacterListViewController.swift in Sources */,
 				7EE356632BFD271B00A75CB1 /* CharacterCell.swift in Sources */,
 				7EFBA1622BFE0411000235F8 /* Status.swift in Sources */,

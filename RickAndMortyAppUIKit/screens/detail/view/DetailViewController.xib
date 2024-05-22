@@ -10,6 +10,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="RickAndMortyAppUIKit" customModuleProvider="target">
             <connections>
+                <outlet property="ivCharacter" destination="uSX-Us-mgG" id="aj2-s6-Cam"/>
+                <outlet property="lbLocation" destination="ZPv-Zb-wdU" id="F4U-8e-CSH"/>
+                <outlet property="lbName" destination="sSj-at-Q6o" id="gKx-Au-dzK"/>
+                <outlet property="lbOrigin" destination="JMV-c8-Gl7" id="JEb-od-nua"/>
+                <outlet property="lbSpecie" destination="2Xl-KQ-02F" id="WnV-4s-h6D"/>
+                <outlet property="lbStatus" destination="5qr-2I-SL6" id="6Im-q8-7jf"/>
+                <outlet property="lbType" destination="nt3-Xs-6ka" id="ofL-oy-s4R"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,45 +25,49 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uSX-Us-mgG">
-                    <rect key="frame" x="10" y="69" width="373" height="256.33333333333331"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rick and Morty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSj-at-Q6o">
-                    <rect key="frame" x="10" y="345.33333333333331" width="373" height="36"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rick And Morty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSj-at-Q6o">
+                    <rect key="frame" x="10" y="339" width="373" height="36"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: Alive" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qr-2I-SL6">
-                    <rect key="frame" x="10" y="401.33333333333331" width="373" height="27.666666666666686"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Stat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qr-2I-SL6">
+                    <rect key="frame" x="10" y="395" width="373" height="28.666666666666686"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type: Human" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nt3-Xs-6ka">
-                    <rect key="frame" x="10" y="449" width="373" height="27.666666666666686"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="sdad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nt3-Xs-6ka">
+                    <rect key="frame" x="10" y="443.66666666666669" width="373" height="28.666666666666686"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specie: Human" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xl-KQ-02F">
-                    <rect key="frame" x="10" y="496.66666666666669" width="373" height="28.666666666666686"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="dasd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xl-KQ-02F">
+                    <rect key="frame" x="10" y="492.33333333333331" width="373" height="28.666666666666686"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specie: Human" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMV-c8-Gl7">
-                    <rect key="frame" x="10" y="545.33333333333337" width="373" height="28.666666666666629"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="dasd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMV-c8-Gl7">
+                    <rect key="frame" x="10" y="541" width="373" height="28.666666666666629"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specie: Human" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPv-Zb-wdU">
-                    <rect key="frame" x="10" y="594" width="373" height="28.666666666666629"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="dasda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPv-Zb-wdU">
+                    <rect key="frame" x="10" y="589.66666666666663" width="373" height="28.666666666666629"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uSX-Us-mgG">
+                    <rect key="frame" x="71.666666666666686" y="69" width="250" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="250" id="0Nt-2D-on3"/>
+                        <constraint firstAttribute="height" constant="250" id="GM3-ZQ-nHO"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -66,21 +77,20 @@
                 <constraint firstItem="2Xl-KQ-02F" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="2Og-uu-B2P"/>
                 <constraint firstItem="uSX-Us-mgG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="362-0w-Bid"/>
                 <constraint firstItem="sSj-at-Q6o" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="3JY-TD-bwg"/>
-                <constraint firstItem="uSX-Us-mgG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="44b-yx-yEJ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZPv-Zb-wdU" secondAttribute="bottom" constant="195.33000000000001" id="BZ4-43-0sN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZPv-Zb-wdU" secondAttribute="trailing" constant="10" id="DBL-6x-itM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uSX-Us-mgG" secondAttribute="trailing" constant="71.5" id="EA3-82-f3O"/>
                 <constraint firstItem="5qr-2I-SL6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="F5i-2R-PSh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JMV-c8-Gl7" secondAttribute="trailing" constant="10" id="GAs-NP-0NJ"/>
                 <constraint firstItem="nt3-Xs-6ka" firstAttribute="top" secondItem="5qr-2I-SL6" secondAttribute="bottom" constant="20" id="Gjb-Bx-fiM"/>
                 <constraint firstItem="nt3-Xs-6ka" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Iel-FE-ycN"/>
-                <constraint firstItem="JMV-c8-Gl7" firstAttribute="top" secondItem="2Xl-KQ-02F" secondAttribute="bottom" constant="20" id="NvH-cS-b2a"/>
-                <constraint firstItem="sSj-at-Q6o" firstAttribute="top" secondItem="uSX-Us-mgG" secondAttribute="bottom" constant="20" id="Yv5-yh-WJ3"/>
+                <constraint firstItem="ZPv-Zb-wdU" firstAttribute="top" secondItem="JMV-c8-Gl7" secondAttribute="bottom" constant="20" id="TiX-aC-bKb"/>
+                <constraint firstItem="JMV-c8-Gl7" firstAttribute="top" secondItem="2Xl-KQ-02F" secondAttribute="bottom" constant="20" id="eTM-Xc-fBO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5qr-2I-SL6" secondAttribute="trailing" constant="10" id="fjl-o4-kw8"/>
-                <constraint firstItem="ZPv-Zb-wdU" firstAttribute="top" secondItem="JMV-c8-Gl7" secondAttribute="bottom" constant="20" id="hKB-La-8v5"/>
                 <constraint firstItem="ZPv-Zb-wdU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="hVY-cQ-8Tx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sSj-at-Q6o" secondAttribute="trailing" constant="10" id="iCi-Kf-5EB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nt3-Xs-6ka" secondAttribute="trailing" constant="10" id="jM4-Bf-DlX"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uSX-Us-mgG" secondAttribute="trailing" constant="10" id="oKU-tR-K1Y"/>
+                <constraint firstItem="uSX-Us-mgG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="71.5" id="pxN-Ed-5yI"/>
+                <constraint firstItem="sSj-at-Q6o" firstAttribute="top" secondItem="uSX-Us-mgG" secondAttribute="bottom" constant="20" id="sRd-RS-4Lh"/>
                 <constraint firstItem="2Xl-KQ-02F" firstAttribute="top" secondItem="nt3-Xs-6ka" secondAttribute="bottom" constant="20" id="vZN-yR-ocu"/>
                 <constraint firstItem="JMV-c8-Gl7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="yjd-GE-fka"/>
             </constraints>
