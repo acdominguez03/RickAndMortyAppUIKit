@@ -16,17 +16,22 @@ class CharacterListDataManager {
     }
     
     func getCharacters(
+        page: Int,
         success: @escaping ([CharacterModel]) -> Void,
         failure: @escaping (String) -> Void
     ) {
-        apiClient.charactersRequest { charactersDTO in
-            let characters = charactersDTO.results.map { character in
-                character.toCharacterModel()
+        let parameters = ["page": page]
+        
+        apiClient.charactersRequest(
+            parameters: parameters, 
+            success: { charactersDTO in
+                let characters = charactersDTO.results.map { character in
+                    character.toCharacterModel()
+                }
+                success(characters)
+            }, failure: { error in
+                failure(error)
             }
-            success(characters)
-        } failure: { error in
-            failure(error)
-        }
-
+        )
     }
 }

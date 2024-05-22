@@ -20,7 +20,9 @@ class CharacterListViewController: UIViewController {
         super.viewDidLoad()
         title = "Characters"
         
-        viewModel.getCharacters()
+        viewModel.getCharacters {
+            self.collectionView.reloadData()
+        }
         
         setUpCollectionView()
         
@@ -38,10 +40,8 @@ class CharacterListViewController: UIViewController {
     func responseViewModel() {
         viewModel.$loading.sink { isLoading in
             if(!isLoading) {
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-                    self.loading.stopAnimating()
-                    self.collectionView.reloadData()
-                }
+                self.loading.stopAnimating()
+                self.collectionView.reloadData()
             } else {
                 self.loading.startAnimating()
             }
@@ -53,7 +53,7 @@ class CharacterListViewController: UIViewController {
     }
 }
 
-extension CharacterListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension CharacterListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let elementId = viewModel.characters[indexPath.row].id
@@ -82,7 +82,19 @@ extension CharacterListViewController: UICollectionViewDataSource, UICollectionV
         let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
         return view
     }
+}
 
+extension CharacterListViewController: UICollectionViewDelegate {
+    
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if (viewModel.actualPage < Constants.maxPage && indexPath.row == viewModel.characters.count - 1) {
+            viewModel.updatePage()
+            viewModel.getCharacters(success: {
+                collectionView.reloadData()
+            })
+        }
+    }
 }
 
 extension CharacterListViewController: UICollectionViewDelegateFlowLayout {
