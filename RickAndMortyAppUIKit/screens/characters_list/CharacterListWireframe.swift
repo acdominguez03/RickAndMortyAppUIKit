@@ -30,6 +30,10 @@ class CharacterListWireframe {
         return CharacterListDataManager(apiClient: apiClient)
     }
     
+    func getViewController() -> CharacterListViewController {
+        return viewController
+    }
+    
     func push(navigation: UINavigationController?) {
         guard let navigation = navigation else { return }
         navigation.pushViewController(viewController, animated: true)

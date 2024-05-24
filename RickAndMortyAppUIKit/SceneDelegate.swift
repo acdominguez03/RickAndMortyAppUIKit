@@ -18,9 +18,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        let navigation = UINavigationController()
+        var viewControllers: [UIViewController] = []
         
-        CharacterListWireframe().push(navigation: navigation)
+        let navigation = UITabBarController()
+        
+        let charactersViewController = CharacterListWireframe().getViewController()
+        charactersViewController.tabBarItem = UITabBarItem(title: "Characters", image:  UIImage(named: "character"), tag: 0)
+       
+        let charactersNav = UINavigationController(rootViewController: charactersViewController)
+        
+        viewControllers.append(charactersNav)
+        
+        let episodesViewController = EpisodesListViewController()
+        episodesViewController.tabBarItem = UITabBarItem(title: "Episodes", image:  UIImage(named: "episode"), tag: 1)
+        viewControllers.append(episodesViewController)
+        
+        let locationsViewController = LocationsListViewController()
+        locationsViewController.tabBarItem = UITabBarItem(title: "Locations", image: UIImage(named: "location"), tag: 2)
+        viewControllers.append(locationsViewController)
+        
+        navigation.viewControllers = viewControllers
         
         window?.rootViewController = navigation
     }

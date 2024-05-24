@@ -10,7 +10,7 @@ import Alamofire
 
 class ApiClient {
     
-    let baseUrl = "https://rickandmortyapi.com/api/character/"
+    let baseUrl = "https://rickandmortyapi.com/api/"
     
     private var sessionManager: Alamofire.Session
     
@@ -39,6 +39,73 @@ class ApiClient {
         self.sessionManager = Session(configuration: URLSessionConfiguration.default, serverTrustManager: wildcard)
     }
     
+    func request(
+        endPoint: Endpoints.RawValue,
+        method: HTTPMethod = .get,
+        parameters: Parameters? = nil,
+        headers: HTTPHeaders? = nil,
+        success: @escaping (Data?) -> Void,
+        failure: @escaping (String) -> Void
+    ) {
+        let url = baseUrl + endPoint
+        sessionManager.request(url, method: method, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+            .response { response in
+                switch response.result {
+                case .success(let data):
+                    success(data)
+                case .failure(let error):
+                    failure(error.localizedDescription)
+                }
+                    
+            }
+    }
+    
+    
+    func charactersRequest(
+        success: @escaping (CharactersDTO) -> Void,
+        failure: @escaping (String) -> Void
+    ) {
+        request(endPoint: Endpoints.character.rawValue, success: { data in
+            do {
+                let characters = try JSONDecoder().decode(CharactersDTO.self, from: data ?? Data())
+                print(characters)
+                success(characters)
+            } catch {
+                print("Error decoding characters")
+            }
+        }, failure: { error in
+            failure(error)
+        })
+    }
+    
+    func characterDetailRequest(
+        id: Int,
+        success: @escaping (CharacterDetailDTO) -> Void,
+        failure: @escaping (String) -> Void
+    ) {
+        let endPoint = Endpoints.character
+        let url = baseUrl + Endpoints.character.rawValue + String(id)
+        
+        request(endPoint: Endpoints.character.rawValue, success: <#T##(Data?) -> Void#>, failure: <#T##(String) -> Void#>)
+        
+//        sessionManager.request(url, method: method, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+//            .response { response in
+//                switch response.result {
+//                case .success(let data):
+//                    do {
+//                        let character = try JSONDecoder().decode(CharacterDetailDTO.self, from: data ?? Data())
+//                        print(character)
+//                        success(character)
+//                    } catch {
+//                        print("error al descodificar")
+//                    }
+//                case .failure(let error):
+//                    print(error)
+//                    failure(error.localizedDescription)
+//                }
+//                    
+//            }
+    }
     
     func charactersRequest(
         method: HTTPMethod = .get,
@@ -55,35 +122,6 @@ class ApiClient {
                         let characters = try JSONDecoder().decode(CharactersDTO.self, from: data ?? Data())
                         print(characters)
                         success(characters)
-                    } catch {
-                        print("error al descodificar")
-                    }
-                case .failure(let error):
-                    print(error)
-                    failure(error.localizedDescription)
-                }
-                    
-            }
-    }
-    
-    func characterDetailRequest(
-        id: Int,
-        method: HTTPMethod = .get,
-        parameters: Parameters? = nil,
-        headers: HTTPHeaders? = nil,
-        success: @escaping (CharacterDetailDTO) -> Void,
-        failure: @escaping (String) -> Void
-    ) {
-        let url = baseUrl + String(id)
-        
-        sessionManager.request(url, method: method, parameters: parameters, encoding: URLEncoding.default, headers: headers)
-            .response { response in
-                switch response.result {
-                case .success(let data):
-                    do {
-                        let character = try JSONDecoder().decode(CharacterDetailDTO.self, from: data ?? Data())
-                        print(character)
-                        success(character)
                     } catch {
                         print("error al descodificar")
                     }
