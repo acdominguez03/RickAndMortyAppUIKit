@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let charactersViewController = CharacterListWireframe().getViewController()
         
-        let episodesViewController = EpisodesListViewController()
+        let episodesViewController = EpisodesListWireframe().getViewController()
         
         let locationsViewController = LocationsListWireframe().getViewController()
         

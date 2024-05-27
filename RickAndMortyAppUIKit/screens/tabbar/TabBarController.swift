@@ -42,7 +42,8 @@ class TabBarController: UITabBarController {
         
         //episodes view controller
         episodesListViewController.tabBarItem = UITabBarItem(title: "Episodes", image:  UIImage(named: "episode"), tag: 1)
-        controllers.append(episodesListViewController)
+        let episodesNav = UINavigationController(rootViewController: episodesListViewController)
+        controllers.append(episodesNav)
         
         //locations view controller
         locationsListViewController.tabBarItem = UITabBarItem(title: "Locations", image: UIImage(named: "location"), tag: 2)

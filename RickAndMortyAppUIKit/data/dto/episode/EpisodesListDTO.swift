@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct EpisodesListDTO: Codable {
+    let info: Info
+    let results: [EpisodeDTO]
+}
