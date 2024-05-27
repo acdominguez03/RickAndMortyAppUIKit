@@ -19,6 +19,9 @@
 		7E226D992BFB4FC600B438FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E226D982BFB4FC600B438FB /* SceneDelegate.swift */; };
 		7E226DA02BFB4FC800B438FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E226D9F2BFB4FC800B438FB /* Assets.xcassets */; };
 		7E226DA32BFB4FC800B438FB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7E226DA22BFB4FC800B438FB /* Base */; };
+		7E27C7752C04FF530074154C /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E27C7732C04FF530074154C /* LocationCell.swift */; };
+		7E27C7762C04FF530074154C /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E27C7742C04FF530074154C /* LocationCell.xib */; };
+		7E27C7792C0518000074154C /* EpisodesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E27C7782C0518000074154C /* EpisodesDTO.swift */; };
 		7E802C3A2BFE4FC300D31BD9 /* CharacterDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E802C392BFE4FC300D31BD9 /* CharacterDetailModel.swift */; };
 		7E802C3C2BFE512E00D31BD9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E802C3B2BFE512E00D31BD9 /* DetailViewModel.swift */; };
 		7E802C422BFE6AB200D31BD9 /* DetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E802C412BFE6AB200D31BD9 /* DetailWireframe.swift */; };
@@ -27,6 +30,9 @@
 		7E802C482BFE7CE500D31BD9 /* CharacterListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E802C472BFE7CE500D31BD9 /* CharacterListDataManager.swift */; };
 		7E802C4A2BFE9C0600D31BD9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E802C492BFE9C0600D31BD9 /* Constants.swift */; };
 		7EDAA7A02C04D32D0030F77D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDAA79F2C04D32D0030F77D /* TabBarController.swift */; };
+		7EDAA7A22C04DB6A0030F77D /* LocationsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDAA7A12C04DB6A0030F77D /* LocationsDTO.swift */; };
+		7EDAA7A52C04DBBD0030F77D /* LocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDAA7A42C04DBBD0030F77D /* LocationDTO.swift */; };
+		7EDAA7AB2C04DC8C0030F77D /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDAA7AA2C04DC8C0030F77D /* LocationModel.swift */; };
 		7EE356632BFD271B00A75CB1 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE356612BFD271B00A75CB1 /* CharacterCell.swift */; };
 		7EE356642BFD271B00A75CB1 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE356622BFD271B00A75CB1 /* CharacterCell.xib */; };
 		7EE356682BFD285700A75CB1 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE356672BFD285700A75CB1 /* CharacterModel.swift */; };
@@ -65,6 +71,9 @@
 		7E226D9F2BFB4FC800B438FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E226DA22BFB4FC800B438FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E226DA42BFB4FC800B438FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E27C7732C04FF530074154C /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		7E27C7742C04FF530074154C /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
+		7E27C7782C0518000074154C /* EpisodesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesDTO.swift; sourceTree = "<group>"; };
 		7E802C392BFE4FC300D31BD9 /* CharacterDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailModel.swift; sourceTree = "<group>"; };
 		7E802C3B2BFE512E00D31BD9 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		7E802C412BFE6AB200D31BD9 /* DetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWireframe.swift; sourceTree = "<group>"; };
@@ -73,6 +82,9 @@
 		7E802C472BFE7CE500D31BD9 /* CharacterListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListDataManager.swift; sourceTree = "<group>"; };
 		7E802C492BFE9C0600D31BD9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7EDAA79F2C04D32D0030F77D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		7EDAA7A12C04DB6A0030F77D /* LocationsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDTO.swift; sourceTree = "<group>"; };
+		7EDAA7A42C04DBBD0030F77D /* LocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDTO.swift; sourceTree = "<group>"; };
+		7EDAA7AA2C04DC8C0030F77D /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		7EE356612BFD271B00A75CB1 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		7EE356622BFD271B00A75CB1 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
 		7EE356672BFD285700A75CB1 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
@@ -135,6 +147,7 @@
 		7E2069892C00FC6B00727470 /* locations_list */ = {
 			isa = PBXGroup;
 			children = (
+				7EDAA7A92C04DC820030F77D /* model */,
 				7E20698A2C00FC7700727470 /* view */,
 				7E20698F2C00FF4C00727470 /* LocationsListViewModel.swift */,
 				7E2069912C00FF6000727470 /* LocationsListWireframe.swift */,
@@ -146,6 +159,7 @@
 		7E20698A2C00FC7700727470 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				7E27C7722C04FF380074154C /* cell */,
 				7E20698B2C00FC8700727470 /* LocationsListViewController.swift */,
 				7E20698C2C00FC8700727470 /* LocationsListView.xib */,
 			);
@@ -194,6 +208,23 @@
 			path = RickAndMortyAppUIKit;
 			sourceTree = "<group>";
 		};
+		7E27C7722C04FF380074154C /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				7E27C7732C04FF530074154C /* LocationCell.swift */,
+				7E27C7742C04FF530074154C /* LocationCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		7E27C7772C0517F40074154C /* episode */ = {
+			isa = PBXGroup;
+			children = (
+				7E27C7782C0518000074154C /* EpisodesDTO.swift */,
+			);
+			path = episode;
+			sourceTree = "<group>";
+		};
 		7E802C3D2BFE5FDC00D31BD9 /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +268,44 @@
 			path = tabbar;
 			sourceTree = "<group>";
 		};
+		7EDAA7A32C04DBAB0030F77D /* location */ = {
+			isa = PBXGroup;
+			children = (
+				7EDAA7A12C04DB6A0030F77D /* LocationsDTO.swift */,
+				7EDAA7A42C04DBBD0030F77D /* LocationDTO.swift */,
+			);
+			path = location;
+			sourceTree = "<group>";
+		};
+		7EDAA7A62C04DBE60030F77D /* characters */ = {
+			isa = PBXGroup;
+			children = (
+				7EFBA1552BFE0318000235F8 /* CharactersDTO.swift */,
+				7EFBA1572BFE035F000235F8 /* Info.swift */,
+				7EFBA1592BFE0387000235F8 /* Result.swift */,
+				7EFBA15B2BFE03B4000235F8 /* Gender.swift */,
+				7EFBA15D2BFE03C6000235F8 /* Location.swift */,
+				7EFBA1612BFE0411000235F8 /* Status.swift */,
+			);
+			path = characters;
+			sourceTree = "<group>";
+		};
+		7EDAA7A72C04DBF50030F77D /* character_detail */ = {
+			isa = PBXGroup;
+			children = (
+				7EFBA1732BFE4A82000235F8 /* CharacterDetailDTO.swift */,
+			);
+			path = character_detail;
+			sourceTree = "<group>";
+		};
+		7EDAA7A92C04DC820030F77D /* model */ = {
+			isa = PBXGroup;
+			children = (
+				7EDAA7AA2C04DC8C0030F77D /* LocationModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		7EE356652BFD284100A75CB1 /* data */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,13 +318,10 @@
 		7EE356662BFD284A00A75CB1 /* dto */ = {
 			isa = PBXGroup;
 			children = (
-				7EFBA1552BFE0318000235F8 /* CharactersDTO.swift */,
-				7EFBA1572BFE035F000235F8 /* Info.swift */,
-				7EFBA1592BFE0387000235F8 /* Result.swift */,
-				7EFBA15B2BFE03B4000235F8 /* Gender.swift */,
-				7EFBA15D2BFE03C6000235F8 /* Location.swift */,
-				7EFBA1612BFE0411000235F8 /* Status.swift */,
-				7EFBA1732BFE4A82000235F8 /* CharacterDetailDTO.swift */,
+				7E27C7772C0517F40074154C /* episode */,
+				7EDAA7A72C04DBF50030F77D /* character_detail */,
+				7EDAA7A62C04DBE60030F77D /* characters */,
+				7EDAA7A32C04DBAB0030F77D /* location */,
 			);
 			path = dto;
 			sourceTree = "<group>";
@@ -266,7 +332,7 @@
 				7EDAA79E2C04D3200030F77D /* tabbar */,
 				7E2069892C00FC6B00727470 /* locations_list */,
 				7E2069802C00F5BA00727470 /* episodes_list */,
-				7EE356712BFD5A9B00A75CB1 /* detail */,
+				7EE356712BFD5A9B00A75CB1 /* character_detail */,
 				7EE356702BFD5A8500A75CB1 /* characters_list */,
 			);
 			path = screens;
@@ -284,7 +350,7 @@
 			path = characters_list;
 			sourceTree = "<group>";
 		};
-		7EE356712BFD5A9B00A75CB1 /* detail */ = {
+		7EE356712BFD5A9B00A75CB1 /* character_detail */ = {
 			isa = PBXGroup;
 			children = (
 				7E802C3F2BFE5FFA00D31BD9 /* model */,
@@ -293,7 +359,7 @@
 				7E802C412BFE6AB200D31BD9 /* DetailWireframe.swift */,
 				7E802C432BFE6BB700D31BD9 /* DetailDataManager.swift */,
 			);
-			path = detail;
+			path = character_detail;
 			sourceTree = "<group>";
 		};
 		7EFBA1632BFE05ED000235F8 /* cell */ = {
@@ -393,6 +459,7 @@
 				7EE3566E2BFD5A4200A75CB1 /* Main.storyboard in Resources */,
 				7E226DA02BFB4FC800B438FB /* Assets.xcassets in Resources */,
 				7EFBA16F2BFE178D000235F8 /* _.rickandmortyapi.com.cer in Resources */,
+				7E27C7762C04FF530074154C /* LocationCell.xib in Resources */,
 				7E226DA32BFB4FC800B438FB /* Base in Resources */,
 				7E2069872C00F62200727470 /* EpisodesListView.xib in Resources */,
 				7EE356642BFD271B00A75CB1 /* CharacterCell.xib in Resources */,
@@ -408,6 +475,7 @@
 			files = (
 				7E2069972C00FF8600727470 /* Endpoints.swift in Sources */,
 				7EFBA1652BFE0607000235F8 /* CharacterListViewModel.swift in Sources */,
+				7E27C7752C04FF530074154C /* LocationCell.swift in Sources */,
 				7EFBA15A2BFE0387000235F8 /* Result.swift in Sources */,
 				7EDAA7A02C04D32D0030F77D /* TabBarController.swift in Sources */,
 				7E802C422BFE6AB200D31BD9 /* DetailWireframe.swift in Sources */,
@@ -418,9 +486,11 @@
 				7EE356682BFD285700A75CB1 /* CharacterModel.swift in Sources */,
 				7EFBA1582BFE035F000235F8 /* Info.swift in Sources */,
 				7E226D972BFB4FC600B438FB /* AppDelegate.swift in Sources */,
+				7EDAA7A52C04DBBD0030F77D /* LocationDTO.swift in Sources */,
 				7EFBA1562BFE0318000235F8 /* CharactersDTO.swift in Sources */,
 				7EFBA16C2BFE160E000235F8 /* ApiClient.swift in Sources */,
 				7E2069882C00F62200727470 /* EpisodesListViewController.swift in Sources */,
+				7EDAA7AB2C04DC8C0030F77D /* LocationModel.swift in Sources */,
 				7E802C482BFE7CE500D31BD9 /* CharacterListDataManager.swift in Sources */,
 				7E2069942C00FF7700727470 /* LocationsListDataManager.swift in Sources */,
 				7E20698E2C00FC8700727470 /* LocationsListViewController.swift in Sources */,
@@ -428,12 +498,14 @@
 				7E2069922C00FF6000727470 /* LocationsListWireframe.swift in Sources */,
 				7EFBA1742BFE4A82000235F8 /* CharacterDetailDTO.swift in Sources */,
 				7E802C462BFE7CA500D31BD9 /* CharacterListWireframe.swift in Sources */,
+				7E27C7792C0518000074154C /* EpisodesDTO.swift in Sources */,
 				7EFBA15C2BFE03B4000235F8 /* Gender.swift in Sources */,
 				7E2069902C00FF4C00727470 /* LocationsListViewModel.swift in Sources */,
 				7EE356752BFD5AB300A75CB1 /* DetailViewController.swift in Sources */,
 				7E802C3C2BFE512E00D31BD9 /* DetailViewModel.swift in Sources */,
 				7E802C3A2BFE4FC300D31BD9 /* CharacterDetailModel.swift in Sources */,
 				7EE3566C2BFD573400A75CB1 /* CharacterListViewController.swift in Sources */,
+				7EDAA7A22C04DB6A0030F77D /* LocationsDTO.swift in Sources */,
 				7EE356632BFD271B00A75CB1 /* CharacterCell.swift in Sources */,
 				7EFBA1622BFE0411000235F8 /* Status.swift in Sources */,
 			);

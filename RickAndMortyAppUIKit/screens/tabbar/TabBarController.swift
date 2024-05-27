@@ -46,7 +46,8 @@ class TabBarController: UITabBarController {
         
         //locations view controller
         locationsListViewController.tabBarItem = UITabBarItem(title: "Locations", image: UIImage(named: "location"), tag: 2)
-        controllers.append(locationsListViewController)
+        let locationsNav = UINavigationController(rootViewController: locationsListViewController)
+        controllers.append(locationsNav)
         
         return controllers
     }

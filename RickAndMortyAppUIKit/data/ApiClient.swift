@@ -98,4 +98,23 @@ class ApiClient {
             failure(error)
         }
     }
+    
+    func locationsRequest(
+        parameters: Parameters,
+        success: @escaping (LocationsDTO) -> Void,
+        failure: @escaping (String) -> Void
+    ) {
+        let url = baseUrl + Endpoints.location.rawValue
+        request(url: url, parameters: parameters, success: { data in
+            do {
+                let locations = try JSONDecoder().decode(LocationsDTO.self, from: data ?? Data())
+                print(locations)
+                success(locations)
+            } catch {
+                print("Error decoding locations")
+            }
+        }, failure: { error in
+            failure(error)
+        })
+    }
 }

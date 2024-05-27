@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let episodesViewController = EpisodesListViewController()
         
-        let locationsViewController = LocationsListViewController()
+        let locationsViewController = LocationsListWireframe().getViewController()
         
         let rootVC = TabBarController(
             characterListViewController: charactersViewController,
@@ -32,6 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         )
         
         window?.rootViewController = rootVC
+        window?.backgroundColor = .white
         window?.makeKeyAndVisible()
     }
 

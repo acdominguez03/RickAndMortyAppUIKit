@@ -8,5 +8,7 @@
 import Foundation
 
 class Constants {
-    static let maxPage = 42
+    static let maxPageCharacters = 42
+    static let maxPageLocations = 7
+    static let maxPageEpisodes = 3
 }

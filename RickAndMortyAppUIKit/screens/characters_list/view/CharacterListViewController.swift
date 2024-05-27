@@ -18,6 +18,8 @@ class CharacterListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
         title = "Characters"
         
         viewModel.getCharacters {
@@ -77,18 +79,13 @@ extension CharacterListViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
-        return view
-    }
 }
 
 extension CharacterListViewController: UICollectionViewDelegate {
     
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if (viewModel.actualPage < Constants.maxPage && indexPath.row == viewModel.characters.count - 1) {
+        if (viewModel.actualPage < Constants.maxPageCharacters && indexPath.row == viewModel.characters.count - 1) {
             viewModel.updatePage()
             viewModel.getCharacters(success: {
                 collectionView.reloadData()
